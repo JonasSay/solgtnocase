@@ -1,27 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import data from "../data/customerdata.json"
+
 
 const CustomerView = () => {
 
+  const customerData = data
+  const [myState, setMyState] = useState(0);
 
-  function showCustomers() {
+  function showCustomer() {
+    return customerData[myState].navn
+  }
 
-    const customerData = JSON.parse(data)
+  function showPreviousCustomer() {
+    if(myState > 0) {
+      setMyState(myState - 1)
+    }
+  }
 
-    return customerData.map( customer => {
-      return <div>
-        Customer: {customer.name}
-      </div>
-    })
-
+  function showNextCustomer() {
+    if(myState < customerData.length - 1) {
+      setMyState(myState + 1)
+    }
   }
 
   return (
       <div className="container">
-        <div className="customer-info"> </div>
-        { showCustomers() }
+        <button onClick={showPreviousCustomer} className="forrigeButton">Forrige</button>
+        {showCustomer()}
+        <button onClick={showNextCustomer} className="nesteButton">Neste</button>
       </div>
   )
 }
+// <div className="customer-info"></div>
 
 export default CustomerView;

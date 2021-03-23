@@ -9,10 +9,21 @@
   outline-color: black;
   margin: 5% 30% 0% 30%;
   height: 600px;
+  box-shadow: 1px 1px 8px ;
+  border: 1px solid #bbe7e7;
 }
 
 .customer-info {
-  background-color: #d1eeee;
+  background-color: black;
+}
+.forrigeButton {
+  float: left;
+  margin: 1% 1%;
+}
+
+.nesteButton {
+  float: right;
+  margin: 1% 1%;
 }
 
 body{
