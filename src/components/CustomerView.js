@@ -35,37 +35,37 @@ const CustomerView = () => {
     switch (customerAction) {
       case stage1:
         return (<h4 className="progress-line">
-          Status:<h3>Venter på tilbud</h3>
+          Status (1/7):<h3>Venter på tilbud</h3>
         </h4>)
       case stage2:
         return (
             <h4 className="progress-line">
-              Status:<h3>Tilbud opprettet</h3>
+              Status (2/7):<h3>Tilbud opprettet</h3>
             </h4>)
       case stage3:
         return (
             <h4 className="progress-line">
-              Status:<h3>Tilbud akseptert</h3>
+              Status (3/7):<h3>Tilbud akseptert</h3>
             </h4>)
       case stage4:
         return (
             <h4 className="progress-line">
-              Status:<h3>Venter på endelig tilbud</h3>
+              Status (4/7):<h3>Venter på endelig tilbud</h3>
             </h4>)
       case stage5:
         return (
             <h4 className="progress-line">
-              Status:<h3>Endelig tilbud opprettet</h3>
+              Status (5/7):<h3>Endelig tilbud opprettet</h3>
             </h4>)
       case stage6:
         return (
             <h4 className="progress-line">
-              Status:<h3>Venter på overtagelse</h3>
+              Status (6/7):<h3>Venter på overtagelse</h3>
             </h4>)
       case stage7:
         return (
             <h4 className="progress-line">
-              Status:<h3>Avsluttet</h3>
+              Status (7/7):<h3>Avsluttet</h3>
             </h4>)
     }
   }
@@ -101,6 +101,5 @@ const CustomerView = () => {
       </div>
   )
 }
-// <div className="customer-info"></div>
 
 export default CustomerView;
