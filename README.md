@@ -11,60 +11,75 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Explaining the functionality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The webpage visually displays what stage the customer is currently at in their real estate sales process. It is possible
+to loop through all the customers by clicking the buttons. At the bottom of the customer view it is clearly displayed the
+customers next step, which seemed to be an important factor when developing this webpage. There's also customer information
+displayed in the main section of the customer view.
 
-### `yarn build`
+#### Task duration: 2 hours
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I would have loved to use bootstrap and make it prettier as it is currently a complete eyesore, but I guess
+it was part of the task to only spend 2 hours on it. I would like to specify that I'm no design guru, however
+it wouldve been way better if we were allowed to use dependencies for design.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Explanation of the task
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This webpage is developed according to the specifications from Solgt.no. The requirements were:
 
-### `yarn eject`
+Background:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The process of selling a house can be confusing, especially if the seller is inexperienced or has never heard of the ibuying model. Our experience is that most customers are not intimately familiar with the process, and in order to help guide our customers, we want to provide a visual indicator of where in the process the customer currently is, and what their next action would be.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A sale follows these steps:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Waiting for offer
 
-## Learn More
+2. Offer created
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Offer accepted
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Waiting for final offer
 
-### Code Splitting
+5. Final offer created
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. Waiting for takeover
 
-### Analyzing the Bundle Size
+7. Completed
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Each step may or may not have one or more attached actions the customer needs to do in order to progress to the next step.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+The task:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We want you to
 
-### Deployment
+- Create one (or more, depending on how you want to organise your code) react component which should:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    - Show the customer where in the process they are by displaying
 
-### `yarn build` fails to minify
+        - The current step they are at
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        - What the next action would be
+
+- Add the component to an empty react app so we can view it
+
+- Add functionality to loop through each customer
+
+- Upload the code to git
+
+- Create a short documentation explaining the functionality
+
+
+You have been provided with a JSON file containing a number of customers at different stages of the process, and we would like to be able to flip through these different customers, displaying one at a time.
+
+
+Limitations:
+
+- We want you to use as few extra react components as possible, focusing on writing your own code and not using dependencies
+
+- You can use whatever you want for the html/CSS
