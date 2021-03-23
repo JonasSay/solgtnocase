@@ -11,39 +11,62 @@ const CustomerView = () => {
   function showCustomer() {
     return (
         <div className="customer-info">
-          <p>Navn: {customerData[myState].navn}</p>
-          <p>Adresse: {customerData[myState].adresse}</p>
-          <p>Primærrom: {customerData[myState].prom}</p>
-          <p>Etasje: {customerData[myState].etasje}</p>
-          <p>Soverom: {customerData[myState].soverom}</p>
-          <p>Lokasjon: {customerData[myState].lat} + {customerData[myState].lon} (sette inn Google Maps integrasjon)</p>
+          <p><span style={{fontWeight: "bold"}}>Kunde:</span> {customerData[myState].navn}</p>
+          <p><span style={{fontWeight: "bold"}}>Adresse:</span> {customerData[myState].adresse}</p>
+          <p><span style={{fontWeight: "bold"}}>Primærrom:</span> {customerData[myState].prom}</p>
+          <p><span style={{fontWeight: "bold"}}>Etasje:</span> {customerData[myState].etasje}</p>
+          <p><span style={{fontWeight: "bold"}}>Soverom:</span> {customerData[myState].soverom}</p>
+          <p><span style={{fontWeight: "bold"}}>Lokasjon:</span> {customerData[myState].lat} + {customerData[myState].lon} (sette inn Google Maps integrasjon)</p>
         </div>
     )
   }
 
+  // I am very very very very very sorry for this complete eyesore, but I was running out of time
   function showCurrentStage(stageIndex) {
-    switch (stageIndex) {
-      case "Venter på tilbud":
-        setMyStageIndex(0)
-        break;
-      case "Tilbud opprettet":
-        setMyStageIndex(1)
-        break;
-      case "Tilbud akseptert":
-        setMyStageIndex(2)
-        break;
-      case "Venter på endelig tilbud":
-        setMyStageIndex(3)
-        break;
-      case "Endelig tilbud opprettet":
-        setMyStageIndex(4)
-        break;
-      case "Venter på overtagelse":
-        setMyStageIndex(5)
-        break;
-      case "Avsluttet":
-        setMyStageIndex(6);
-        break;
+    const customerAction = customerData[myState].status
+    const stage1 = "Venter på tilbud"
+    const stage2 = "Tilbud opprettet"
+    const stage3 = "Tilbud akseptert"
+    const stage4 = "Venter på endelig tilbud"
+    const stage5 = "Endelig tilbud opprettet"
+    const stage6 = "Venter på overtagelse"
+    const stage7 = "Avsluttet"
+
+    switch (customerAction) {
+      case stage1:
+        return (<h4 className="progress-line">
+          Status:<h3>Venter på tilbud</h3>
+        </h4>)
+      case stage2:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Tilbud opprettet</h3>
+            </h4>)
+      case stage3:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Tilbud akseptert</h3>
+            </h4>)
+      case stage4:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Venter på endelig tilbud</h3>
+            </h4>)
+      case stage5:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Endelig tilbud opprettet</h3>
+            </h4>)
+      case stage6:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Venter på overtagelse</h3>
+            </h4>)
+      case stage7:
+        return (
+            <h4 className="progress-line">
+              Status:<h3>Avsluttet</h3>
+            </h4>)
     }
   }
 
@@ -63,13 +86,18 @@ const CustomerView = () => {
       <div className="container">
 
         <div className="buttons">
-          <button onClick={showPreviousCustomer} className="forrigeButton">Forrige</button>
-          <button onClick={showNextCustomer} className="nesteButton">Neste</button>
+          <button onClick={showPreviousCustomer} className="forrige-button">Forrige</button>
+          {myState + 1 + "/" + customerData.length}
+          <button onClick={showNextCustomer} className="neste-button">Neste</button>
         </div>
-          {showCustomer()}
-          <div className="customer-action">
-            <p>Kundeaksjonspunkt: {customerData[myState].kundeaksjonspunkt}</p>
-          </div>
+        {showCurrentStage()}
+        {showCustomer()}
+        <div className="customer-action">
+          <p style={{fontWeight: "bold"}}>Hva er kundens neste steg?</p>
+          {customerData[myState].kundeaksjonspunkt ?
+              <h3>{customerData[myState].kundeaksjonspunkt}</h3> :
+              <h3>Avvent instrukser fra Solgt.no</h3>}
+        </div>
       </div>
   )
 }

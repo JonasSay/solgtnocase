@@ -12,10 +12,11 @@
   box-shadow: 1px 1px 8px ;
   border: 1px solid #bbe7e7;
   text-align: center;
+  position: relative;
 }
 
 .buttons {
- background-color: #eed1d8;
+  background-color: #e0e9e7;
   display: block;
   width: 100%;
 }
@@ -24,14 +25,19 @@
   text-align: left;
 }
 
-.forrigeButton {
-  float: left;
-  margin: 1% 1%;
+.forrige-button {
+  margin: 1% 2%;
 }
 
-.nesteButton {
-  float: right;
-  margin: 1% 1%;
+.neste-button {
+  margin: 1% 2%;
+}
+
+.customer-action {
+  border-top: 1px solid;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
 }
 
 body{
