@@ -4,7 +4,7 @@ import CustomerView from "./components/CustomerView";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <CustomerView/>
     </div>
   );

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  align-items: center;
+
 }
 
 .container {
@@ -11,11 +11,19 @@
   height: 600px;
   box-shadow: 1px 1px 8px ;
   border: 1px solid #bbe7e7;
+  text-align: center;
 }
 
-.customer-info {
-  background-color: black;
+.buttons {
+ background-color: #eed1d8;
+  display: block;
+  width: 100%;
 }
+
+.customer-info{
+  text-align: left;
+}
+
 .forrigeButton {
   float: left;
   margin: 1% 1%;
